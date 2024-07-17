@@ -5,7 +5,8 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'getSystemInfo') {
         let systemInfo = {};
-
+        // const userAgent = window.navigator.userAgent;
+        // systemInfo.userAgent = userAgent;
         chrome.system.cpu.getInfo((cpuInfo) => {
             systemInfo.cpu = cpuInfo;
             chrome.system.memory.getInfo((memoryInfo) => {
